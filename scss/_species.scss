@@ -1,0 +1,306 @@
+.species {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+
+    .species__title {
+        margin: 40px 0;
+        text-align: center;
+        font-size: 2.5rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    .species-wrap {
+        display: flex;
+        flex-direction: column;
+        border-bottom: 50px solid $theme-color;
+
+        .species-wrap__child {
+            width: 100vw;
+            height: 40vh;
+        }
+
+        .species-wrap__image--box {
+            position: relative;
+            background-color: $theme-color;
+            overflow: hidden;
+
+            .species-wrap__img {
+                position: absolute;
+                width: auto;
+                height: 100%;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                transition: 0.3s linear;
+            }
+        }
+
+        .species-wrap__description--box {
+            padding: 10px 20px;
+            // background-color: #E86D7D;
+            background-color: #F4F2F3;
+            // color: rgb(92, 24, 33);
+            // background-color: rgba(207, 53, 73, 0.75);
+
+            .species-wrap__title {
+                position: relative;
+                margin: 10px 0;
+                font-size: 3rem;
+                text-align: center;
+                font-family: 'Dosis', Arial, Helvetica, sans-serif;
+            }
+
+            .species-wrap__description {
+                font-size: 2rem;
+                text-align: justify;
+                font-family: 'Dosis', Arial, Helvetica, sans-serif;
+            }
+        }
+
+
+    }
+
+}
+
+@media (max-width: 320px) {
+    .species {
+        .species__title {
+            font-size: 2.2rem;
+        }
+
+        .species-wrap {
+
+            .species-wrap__description--box {
+                padding: 10px 20px;
+
+                .species-wrap__title {
+                    margin: 10px 0;
+                    font-size: 2.5rem;
+                }
+
+                .species-wrap__description {
+                    font-size: 1.7rem;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 411px) {
+    .species {
+        .species__title {
+            font-size: 3rem;
+        }
+
+        .species-wrap {
+            .species-wrap__description--box {
+                padding: 10px 25px;
+
+                .species-wrap__title {
+                    margin: 15px 0;
+                    font-size: 3.2rem;
+                }
+
+                .species-wrap__description {
+                    font-size: 2.2rem;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 375px) and (min-height:812px) {
+    .species {
+        .species__title {
+            font-size: 3rem;
+        }
+
+        .species-wrap {
+            .species-wrap__description--box {
+                padding: 10px 25px;
+
+                .species-wrap__title {
+                    margin: 20px 0;
+                    font-size: 3.4rem;
+                }
+
+                .species-wrap__description {
+                    font-size: 2.2rem;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .species {
+        .species__title {
+            margin: 80px 0;
+            font-size: 5rem;
+        }
+
+        .species-wrap {
+            border-bottom-width: 100px;
+
+            .species-wrap__child {
+                width: 100vw;
+                height: 45vh;
+            }
+
+            .species-wrap__image--box {
+
+                .species-wrap__img {
+                    height: 120%;
+                }
+            }
+
+            .species-wrap__description--box {
+                padding: 10px 50px;
+
+                .species-wrap__title {
+                    margin: 30px 0;
+                    font-size: 5rem;
+                }
+
+                .species-wrap__description {
+                    font-size: 3.5rem;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 1024px) {
+    .species {
+        .species__title {
+            font-size: 6rem;
+        }
+
+        .species-wrap {
+
+            .species-wrap__description--box {
+                padding: 10px 80px;
+
+                .species-wrap__title {
+                    margin: 50px 0;
+                    font-size: 6.5rem;
+                }
+
+                .species-wrap__description {
+                    font-size: 4rem;
+                }
+            }
+        }
+    }
+}
+
+
+// Desktop
+@media (min-width:1024px) and (orientation:landscape) {
+    .species {
+        .species__title {
+            margin: 70px 0;
+            font-size: 5.5rem;
+        }
+
+        .species-wrap {
+            flex-direction: row;
+            border-bottom-width: 80px;
+
+            .species-wrap__child {
+                width: 50vw;
+                height: 65vh;
+            }
+
+            .species-wrap__image--box {
+                z-index: 1;
+
+                .species-wrap__img {
+                    transition: 0.6s linear;
+                    width: 100%;
+                    height: auto;
+                }
+
+            }
+
+            .species-wrap__image--box:hover>.species-wrap__img {
+                transform: translate(-50%, -50%) scale(1.05);
+            }
+
+            .species-wrap__image--box:hover {
+                background-color: rgba(0, 0, 0, 0.3);
+                z-index: 2;
+            }
+
+            .species-wrap__description--box {
+                padding: 0 40px 40px 40px;
+                background-color: #F4F2F3;
+
+                .species-wrap__title {
+                    margin: 30px 0;
+                    font-size: 4rem;
+                }
+
+                .species-wrap__description {
+                    font-size: 2.3rem;
+                }
+            }
+        }
+
+        .species-wrap:nth-of-type(even) {
+            flex-direction: row-reverse;
+        }
+
+    }
+}
+
+@media (min-width:1024px) and (min-height:768px) and (orientation:landscape) {
+    .species {
+        .species__title {
+            margin: 80px 0;
+        }
+
+        .species-wrap {
+            .species-wrap__child {
+                height: 45vh;
+            }
+        }
+    }
+}
+
+@media (min-width:1024px) and (min-height:1024px) and (orientation:landscape) {
+    .species {
+        .species__title {
+            margin: 80px 0;
+        }
+
+        .species-wrap {
+            .species-wrap__child {
+                height: 50vh;
+            }
+
+            .species-wrap__image--box {
+                .species-wrap__img {
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+
+            .species-wrap__description--box {
+                padding: 0 50px 50px 50px;
+                background-color: #F4F2F3;
+
+                .species-wrap__title {
+                    margin: 50px 0;
+                    font-size: 5rem;
+                }
+
+                .species-wrap__description {
+                    font-size: 3rem;
+                }
+            }
+        }
+    }
+}
