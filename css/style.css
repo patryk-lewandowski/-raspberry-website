@@ -7,6 +7,35 @@
   font-family: 'Source Serif Pro', Arial, Helvetica, sans-serif;
 }
 
+.under-construction {
+  width: 100vw;
+  padding: 15px;
+  text-transform: uppercase;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 900;
+  letter-spacing: 2px;
+  border-bottom: 5px dashed black;
+  border-top: 5px dashed black;
+  background-color: #FACE09;
+  margin-bottom: 10px;
+}
+
+@media (min-width: 768px) {
+  .under-construction {
+    font-size: 3rem;
+    padding: 50px;
+    border-width: 10px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .under-construction {
+    font-size: 4rem;
+    padding: 60px;
+  }
+}
+
 .page {
   display: -webkit-box;
   display: -ms-flexbox;
