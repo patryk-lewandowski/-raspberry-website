@@ -234,6 +234,7 @@
 @media (min-width: 1200px) and (orientation: landscape) {
   .head__title--medium {
     left: 70px;
+    top: calc(20vh + 7vw + 4vh);
   }
 }
 
@@ -269,7 +270,9 @@
   .head__title::after {
     -webkit-transform: none;
             transform: none;
+    margin-top: 2px;
     margin-left: 0;
+    width: 30%;
   }
 }
 
@@ -280,6 +283,12 @@
 @media (orientation: landscape) {
   .head__title--medium::after {
     width: 10%;
+  }
+}
+
+@media (min-width: 1200px) and (orientation: landscape) {
+  .head__title--medium::after {
+    width: 25%;
   }
 }
 
@@ -321,6 +330,16 @@
   }
 }
 
+@media (min-width: 1200px) and (orientation: landscape) {
+  .head__logo-wrap {
+    width: 30vh;
+    height: 30vh;
+    top: 50px;
+    left: calc(100vw - 50px - 15vh);
+    border: 0.5vh solid white;
+  }
+}
+
 .head .button.head__btn {
   position: absolute;
   width: 90vw;
@@ -357,7 +376,7 @@
 
 @media (min-width: 1200px) and (orientation: landscape) {
   .head .button.head__btn {
-    width: 40vw;
+    width: 45vw;
     bottom: 70px;
     letter-spacing: 3px;
     font-size: 2vw;
