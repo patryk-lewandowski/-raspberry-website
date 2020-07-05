@@ -4,9 +4,25 @@ const speciesHeader = document.querySelector('.species__title');
 
 burgerIcon.addEventListener('click', () => {
     burgerIcon.classList.toggle('head__burger-icon--active');
-    burgerIcon.classList.toggle('icon-menu');
-    burgerIcon.classList.toggle('icon-cancel');
-    menu.classList.toggle('menu--active');
+    if (burgerIcon.classList.contains('icon-menu')) {
+        burgerIcon.style.animation = 'menu-out 0.5s linear both';
+        setTimeout(function () {
+            menu.classList.toggle('menu--active');
+            burgerIcon.classList.toggle('icon-cancel');
+            burgerIcon.classList.toggle('icon-menu');
+            burgerIcon.style.animation = 'cancel-in 0.5s linear both';
+        }, 500);
+    } else if (burgerIcon.classList.contains('icon-cancel')) {
+        burgerIcon.style.animation = 'cancel-out 0.5s linear both';
+        setTimeout(function () {
+            menu.classList.toggle('menu--active');
+            burgerIcon.classList.toggle('icon-cancel');
+            burgerIcon.classList.toggle('icon-menu');
+            burgerIcon.style.animation = 'menu-in 0.5s linear both';
+        }, 500);
+    }
+
+
 })
 
 const changeSpeciesHeader = () => {
