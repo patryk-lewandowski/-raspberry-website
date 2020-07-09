@@ -954,6 +954,18 @@
   }
 }
 
+@media (min-width: 760px) and (min-height: 600px) {
+  .species-wrap {
+    border-bottom: 70px solid #1e1e1e;
+  }
+}
+
+@media (min-width: 1200px) and (min-height: 800px) {
+  .species-wrap {
+    border-bottom: 100px solid #1e1e1e;
+  }
+}
+
 @media (min-width: 1400px) and (orientation: landscape) {
   .species-wrap {
     width: 85vw;
@@ -1038,7 +1050,7 @@
 
 @media (min-width: 1024px) and (orientation: landscape) {
   .species-wrap__img {
-    width: 100vmin;
+    width: 100%;
     height: auto;
   }
   .species-wrap__img--shadow {
@@ -1052,7 +1064,20 @@
   }
 }
 
-@media (min-width: 1200px) and (orientation: landscape) {
+@media (min-height: 670px) and (orientation: landscape) {
+  .species-wrap__img {
+    height: 100%;
+  }
+}
+
+@media (min-width: 1200px) and (min-height: 910px) and (orientation: landscape) {
+  .species-wrap__img {
+    width: auto;
+    height: 100%;
+  }
+}
+
+@media (min-width: 1400px) and (orientation: landscape) {
   .species-wrap__img {
     width: 100%;
     height: auto;
@@ -1127,6 +1152,12 @@
   }
 }
 
+@media (min-width: 1400px) and (orientation: landscape) {
+  .species-wrap__description {
+    font-size: 2.5vmin;
+  }
+}
+
 @media (min-width: 1025px) and (orientation: landscape) {
   .species-wrap__description--lbcut::before {
     position: absolute;
@@ -1152,32 +1183,22 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-}
-
-.facts__header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  padding-top: 10px;
-  width: 15%;
-  text-transform: uppercase;
-  background-color: #fff;
-  color: #A61D30;
-  font-style: italic;
-  -webkit-box-shadow: 6px 0px 4px -6px #A61D30;
-          box-shadow: 6px 0px 4px -6px #A61D30;
+}
+
+.facts__header {
+  width: 100%;
   text-align: center;
+  padding: 3vh 0;
+  background-color: #D9042B;
+  font-size: 4vh;
+  letter-spacing: 2px;
+  font-family: "Dosis";
+  font-weight: normal;
+  color: wheat;
 }
 
 .facts__letter {
@@ -1199,33 +1220,5 @@
   font-size: 1.5rem;
   font-weight: 500;
   font-family: 'Dosis', Arial, Helvetica, sans-serif;
-}
-
-@media (min-width: 411px) {
-  .facts__item {
-    font-size: 1.8rem;
-  }
-}
-
-@media (min-width: 768px) {
-  .facts__item {
-    font-size: 2.8rem;
-    margin: 0 20px 80px 20px;
-  }
-}
-
-@media (min-width: 1024px) {
-  .facts__item {
-    font-size: 3.7rem;
-    margin: 0 40px 100px 40px;
-  }
-}
-
-@media (min-width: 1200px) {
-  .facts__item {
-    font-size: 3.7rem;
-    margin: 0 40px 60px 40px;
-    text-align: left;
-  }
 }
 /*# sourceMappingURL=style.css.map */
