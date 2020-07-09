@@ -1,0 +1,333 @@
+.head {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background-image: url("../img/head/head-img.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto 100vh;
+
+    // Obraz <a href="https://pixabay.com/pl/users/pixel2013-2364555/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1426859"> S. Hermann &amp; F. Richter</a> z <a href="https://pixabay.com/pl/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1426859"> Pixabay</a>
+    @media(min-width:1025px) and (orientation:landscape) {
+        background-size: auto auto;
+    }
+
+    @media(max-width:1024px) and (orientation:portrait) {
+        background-image: url("../img/head/head-img-1024-613.jpg");
+        background-size: auto 100vh;
+    }
+
+    @media(max-width:1024px) and (max-height:613px) {
+        background-image: url("../img/head/head-img-1024-613.jpg");
+        background-size: auto auto;
+    }
+
+    @media(max-width:720px) {
+        background-image: url("../img/head/head-img-720-431.jpg");
+    }
+
+    @media(max-width:360px) {
+        background-image: url("../img/head/head-img-360-216.jpg");
+    }
+
+    @media(max-width:500px) and (orientation: portrait) {
+        background-image: url("../img/head/head-img-portrait.jpg");
+        background-size: auto 100vh;
+    }
+
+    background-position: 60% 0;
+    overflow: hidden;
+    font-family: arial,
+    sans-serif;
+
+    &__burger-icon {
+        position: fixed;
+        top: 20px;
+        right: 20px;
+        font-size: 10vw;
+        z-index: 51;
+        opacity: 1;
+
+        @media (min-width:1025px) and (orientation:landscape) {
+            display: none;
+        }
+
+        @media (orientation:landscape) {
+            font-size: 12vh;
+        }
+
+        &--active {
+            top: 16px;
+            right: 7px;
+            color: $theme-color;
+        }
+    }
+
+    .icon-menu {
+        color: #DDD;
+    }
+
+    .icon-cancel {
+        color: $theme-color;
+    }
+
+
+
+    &__title {
+        position: absolute;
+        display: block;
+        width: 100%;
+        transition: 1s linear;
+        text-align: center;
+        color: white;
+
+        @media (min-width: 720px) {
+            letter-spacing: 1px;
+        }
+
+        @media (min-width: 1024px) {
+            letter-spacing: 2px;
+        }
+
+        @media (min-width:1200px) and (orientation:landscape) {
+            display: table;
+            width: auto;
+        }
+
+        &:hover::after {
+            width: 100%;
+        }
+
+
+        &--large {
+            font-size: 8vw;
+            top: $head-top-padding;
+
+            @media (min-width: 720px) {
+                font-size: 7vw;
+            }
+
+            @media (min-width: 900px) {
+                font-size: 6vw;
+            }
+
+            @media (orientation:landscape) {
+                font-size: 8vh;
+            }
+
+            @media (min-width: 1024px) and (orientation:landscape) {
+                font-size: 5vw;
+            }
+
+            @media (min-width:1200px) and (orientation:landscape) {
+                left: 70px;
+            }
+        }
+
+        &--medium {
+            font-size: 7vw;
+            top: calc(#{$head-top-padding} + 7vw + 4vh);
+
+            @media (min-width: 720px) {
+                font-size: 6vw;
+            }
+
+            @media (min-width: 900px) {
+                font-size: 5vw;
+            }
+
+            @media (orientation:landscape) {
+                font-size: 7vh;
+                top: calc(#{$head-top-padding} + 7vh + 6vh);
+            }
+
+            @media (min-width: 1024px) and (orientation:landscape) {
+                font-size: 4vw;
+            }
+
+            @media (min-width:1200px) and (orientation:landscape) {
+                left: 70px;
+                top: calc(#{$head-top-padding} + 7vw + 4vh);
+            }
+        }
+
+        &::after {
+            content: "";
+            position: absolute;
+            display: block;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            height: 0.06em;
+            width: 30%;
+            background-color: rgba(255, 255, 255, 0.85);
+            margin-top: 5px;
+            transition: 0.6s ease-in-out;
+
+            @media (orientation:landscape) {
+                width: 20%;
+            }
+
+            @media (min-width: 1024px) and (orientation:landscape) {
+                margin-top: 5px;
+                height: 0.04em;
+            }
+
+            @media (min-width:1200px) and (orientation:landscape) {
+                transform: none;
+                margin-top: 2px;
+                margin-left: 0;
+                width: 30%;
+            }
+        }
+
+        &--medium::after {
+            width: 15%;
+
+            @media (orientation:landscape) {
+                width: 10%;
+            }
+
+            @media (min-width:1200px) and (orientation:landscape) {
+                width: 25%;
+            }
+        }
+    }
+
+    &__logo {
+        position: absolute;
+        width: 80%;
+        height: auto;
+        top: 5%;
+        left: 5%;
+
+        &-wrap {
+            position: absolute;
+            top: calc(#{$head-top-padding} + 26vh);
+            left: 50%;
+            transform: translateX(-50%);
+            width: 18vh;
+            height: 18vh;
+            border-radius: 50%;
+            border: 0.5vw solid white;
+
+            @media (orientation:landscape) {
+                width: 22vh;
+                height: 22vh;
+                top: calc(#{$head-top-padding} + 30vh);
+                border: 0.5vh solid white;
+            }
+
+            @media (min-width:1024px) and (orientation:landscape) {
+                width: 18vh;
+                height: 18vh;
+                top: calc(#{$head-top-padding} + 27vh);
+                border: 0.35vh solid white;
+            }
+
+            @media (min-width:1200px) and (orientation:landscape) {
+                width: 30vh;
+                height: 30vh;
+                top: 50px;
+                left: calc(100vw - 50px - 15vh);
+                border: 0.5vh solid white;
+                opacity: 0.7;
+            }
+        }
+    }
+
+    .button.head__btn {
+        position: absolute;
+        width: 90vw;
+        height: 9vh;
+        line-height: 9vh;
+        padding: 0 10px;
+        bottom: 7%;
+        right: 5%;
+        font-size: 4vw;
+        border-radius: 10px;
+
+        @media (min-width: 720px) {
+            font-size: 3.5vw;
+        }
+
+        @media (orientation:landscape) {
+            height: 12vh;
+            line-height: 12vh;
+            font-size: 4vh;
+        }
+
+        @media (min-width: 1024px) and (orientation:landscape) {
+            height: 10vh;
+            line-height: 10vh;
+            font-size: 2.2vw;
+        }
+
+        @media (min-width:1200px) and (orientation:landscape) {
+            width: 45vw;
+            bottom: 70px;
+            letter-spacing: 3px;
+            font-size: 2vw;
+            border-width: 2px;
+        }
+    }
+
+    &::before {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.35);
+    }
+}
+
+@keyframes menu-out {
+    0% {
+        top: 20px;
+        right: 20px;
+    }
+
+    100% {
+        top: -10vw;
+        right: 20px;
+
+    }
+}
+
+@keyframes cancel-in {
+    0% {
+        top: 20px;
+        right: -15vw;
+    }
+
+    100% {
+        top: 16px;
+        right: 7px;
+
+    }
+}
+
+@keyframes cancel-out {
+    0% {
+        top: 16px;
+        right: 7px;
+    }
+
+    100% {
+        top: 16px;
+        right: -15vw;
+
+    }
+}
+
+@keyframes menu-in {
+    0% {
+        top: -10vw;
+        right: 20px;
+    }
+
+    100% {
+        top: 20px;
+        right: 20px;
+    }
+}

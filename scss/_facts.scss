@@ -1,0 +1,49 @@
+.facts {
+    background-color: rgba(255, 192, 203, 0.418);
+    display: flex;
+    flex-direction: column;
+
+    &__header {
+        width: 100%;
+        text-align: center;
+        padding: 3vh 0;
+        background-color: #D9042B;
+        font-size: 4vh;
+        letter-spacing: 2px;
+        font-family: "Dosis";
+        font-weight: normal;
+        // background-color:#73061A;
+        // background-color:#BF0637;
+        // background-color:#D9305D;
+        // background-color:#8C041D;
+        // background-color:#590414;
+        // background-color:#A60530;
+        // background-color:#D92958;
+        // background-color:#991A2B;
+        // background-color:#8C1827;
+        // background-color:#B31E32;
+        color: wheat;
+    }
+
+    &__letter {
+        font-size: 2.5rem;
+        font-family: 'Dosis', Arial, Helvetica, sans-serif;
+    }
+
+    &__facts-list {
+        list-style-position: outside;
+        padding: 15px;
+        width: 85%;
+    }
+
+    &__item {
+        border-left: 2px solid #a61d2f8c;
+        margin-left: 7px;
+        margin-bottom: 15px;
+        padding-left: 7px;
+        font-size: 1.5rem;
+        font-weight: 500;
+        font-family: 'Dosis', Arial, Helvetica, sans-serif;
+
+    }
+}

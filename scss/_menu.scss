@@ -1,0 +1,287 @@
+.menu {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: -100%;
+    background-color: #eee;
+    flex-direction: column;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    transition: $menu-time ease-in-out;
+    z-index: 50;
+
+    @media (min-width:1025px) and (orientation:landscape) {
+        position: relative;
+        width: 85vw;
+        height: 110px;
+        flex-direction: row;
+        margin: 10px auto 0 auto;
+        border-bottom: 2px solid $theme-color;
+        padding-bottom: 10px;
+        background-color: #fff;
+        right: 0;
+    }
+
+    @media (min-width:1600px) and (orientation:landscape) {
+        width: 90vw;
+        height: 150px;
+        border-bottom: 3px solid $theme-color;
+    }
+
+    &__logo {
+        position: absolute;
+        width: 70%;
+        height: auto;
+        top: 50%;
+        left: 50%;
+        transform: translate(-55%, -55%);
+
+        @media (min-width:1025px) and (orientation:landscape) {
+            height: 70px;
+            width: auto;
+        }
+
+        @media (min-width:1600px) and (orientation:landscape) {
+            height: 95px;
+        }
+
+        // <div>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+
+
+        &-title-wrap {
+            height: 20vh;
+            padding: 2vh;
+
+            @media (min-width: 720px) and (orientation:portrait) {
+                height: 25vh;
+                padding: 4vh 2vh;
+            }
+
+            @media (min-width:1025px) and (orientation:landscape) {
+                position: relative;
+                padding: 0 0 0 0;
+                display: flex;
+                flex-direction: row;
+                width: 35%;
+                height: 100%;
+                border: none;
+            }
+
+            @media (min-width:1600px) and (orientation:landscape) {
+                // width: 35%;
+            }
+        }
+
+        &-border {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 60vw;
+            height: 60vw;
+            border: 0.5vh solid black;
+            background-color: $theme-color;
+            border-radius: 50%;
+            opacity: 0.07;
+
+            @media (min-width: 720px) and (orientation:portrait) {
+                width: 50vw;
+                height: 50vw;
+            }
+
+            @media (min-width:1025px) and (orientation:landscape) {
+                position: relative;
+                left: 49px;
+                width: 98px;
+                height: 98px;
+                flex-shrink: 0;
+                margin: 0px 10px 0 0;
+                opacity: 1;
+                border: 3px solid black;
+            }
+
+            @media (min-width:1600px) and (orientation:landscape) {
+                height: 137px;
+                width: 137px;
+                left: 69px;
+            }
+        }
+    }
+
+    &__title {
+        position: relative;
+        display: block;
+        height: calc(18vh - 2vh);
+        line-height: calc((20vh - 4vh)/2);
+        margin-left: calc(2vh + 25px);
+        flex-grow: 0;
+        font-size: 5vh;
+        text-align: left;
+        color: $theme-color;
+        font-weight: 700;
+        letter-spacing: 1px;
+        font-family: 'Dosis', Arial, Helvetica, sans-serif;
+
+        @media (min-width:720px) and (orientation:portrait) {
+            font-size: 6vh;
+            margin-left: calc(2vh + 30px);
+        }
+
+        @media (min-width:1025px) and (orientation:landscape) {
+            height: auto;
+            text-align: center;
+            margin-left: 15px;
+            line-height: 40px;
+            padding-top: 9px;
+            font-size: 33px;
+        }
+
+        @media (min-width:1600px) and (orientation:landscape) {
+            line-height: 45px;
+            padding-top: 20px;
+            margin-left: 20px;
+            font-size: 40px;
+        }
+
+        // text-shadow: 1px 0px 1px #CCCCCC, 0px 1px 1px #EEEEEE, 2px 1px 1px #CCCCCC, 1px 2px 1px #EEEEEE, 3px 2px 1px #CCCCCC, 2px 3px 1px #EEEEEE, 4px 3px 1px #CCCCCC, 3px 4px 1px #EEEEEE, 5px 4px 1px #CCCCCC, 4px 5px 1px #EEEEEE, 6px 5px 1px #CCCCCC, 5px 6px 1px #EEEEEE, 7px 6px 1px #CCCCCC;
+        &::before {
+            position: absolute;
+            content: "";
+            display: block;
+            width: 15px;
+            height: 90%;
+            top: 5%;
+            left: -25px;
+            background-color: $theme-color;
+
+            @media (min-width:720px) and (orientation:portrait) {
+                font-size: 6vh;
+                width: 20px;
+                left: -35px;
+            }
+
+            @media (min-width:1025px) and (orientation:landscape) {
+                display: none;
+            }
+        }
+
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+        width: 100%;
+        flex-grow: 1;
+        flex-wrap: nowrap;
+        text-transform: uppercase;
+        overflow: hidden;
+
+        @media (max-width: 1024px) and (orientation: landscape) {
+            margin: 10px;
+            width: calc(50% - 20px);
+            height: calc(50% - 20px);
+            border-bottom: 2px solid #6B1C32;
+            flex-grow: 0;
+
+            &:last-of-type {
+                width: calc(50% - 20px);
+                margin-bottom: 10px;
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+
+        @media (min-width: 1025px) and (orientation: landscape) {
+            position: relative;
+            line-height: 110px;
+        }
+
+        @media (min-width: 1025px) and (orientation: landscape) {
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: 30%;
+                right: -100%;
+                width: 80%;
+                height: 2px;
+                background-color: $theme-color;
+                transition: .7s cubic-bezier(0, 1.8, 1, 1);
+            }
+
+            &:hover::before {
+                right: 10%;
+            }
+        }
+
+        @media (min-width: 1600px) and (orientation: landscape) {
+            line-height: 150px;
+        }
+
+        &-list {
+            display: flex;
+            flex-direction: column;
+            flex-basis: 100%;
+            list-style: none;
+            margin-top: 10px;
+
+            @media (max-width: 1024px) and (orientation: landscape) {
+                flex-basis: 50%;
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+
+            @media (min-width: 1025px) and (orientation: landscape) {
+                display: inline-flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                align-items: flex-start;
+                margin-top: 0;
+            }
+        }
+    }
+
+    &__link {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+        font-size: 4vh;
+        font-family: 'Dosis', Arial, Helvetica, sans-serif;
+        letter-spacing: 2px;
+        font-weight: 700;
+        color: lighten($theme-color, 10%);
+        text-decoration: none;
+        border-bottom: 2px solid transparent;
+
+        @media (min-width:720px) and (orientation:portrait) {
+            font-size: 4.5vh;
+        }
+
+        @media (max-width: 1024px) and (orientation: landscape) {
+            font-size: 4.5vh;
+            letter-spacing: 5px;
+        }
+
+        @media (min-width: 1025px) and (orientation: landscape) {
+            display: block;
+            color: $theme-color;
+            font-size: 19px;
+            padding-bottom: 5px;
+        }
+
+        @media (min-width: 1400px) and (orientation: landscape) {
+            font-size: 21px;
+        }
+
+        @media (min-width: 1600px) and (orientation: landscape) {
+            font-size: 30px;
+        }
+    }
+
+    &--active {
+        right: 0;
+    }
+}
