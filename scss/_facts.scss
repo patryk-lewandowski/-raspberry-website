@@ -1,49 +1,168 @@
 .facts {
-    background-color: rgba(255, 192, 203, 0.418);
     display: flex;
     flex-direction: column;
+    width: 100%;
+    background-color: #efffff;
 
     &__header {
         width: 100%;
-        text-align: center;
-        padding: 3vh 0;
-        background-color: #D9042B;
-        font-size: 4vh;
-        letter-spacing: 2px;
-        font-family: "Dosis";
-        font-weight: normal;
-        // background-color:#73061A;
-        // background-color:#BF0637;
-        // background-color:#D9305D;
-        // background-color:#8C041D;
-        // background-color:#590414;
-        // background-color:#A60530;
-        // background-color:#D92958;
-        // background-color:#991A2B;
-        // background-color:#8C1827;
-        // background-color:#B31E32;
-        color: wheat;
+        padding: 8vh 0;
+        background-color: #8C041D;
+        border-bottom: 2px solid #D9305D;
+        margin-top: -1px;
+
+        @media (orientation:landscape) {
+            padding: 15vh 0;
+        }
     }
 
-    &__letter {
-        font-size: 2.5rem;
-        font-family: 'Dosis', Arial, Helvetica, sans-serif;
+    &__word {
+        position: relative;
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+        font-size: 5vh;
+        letter-spacing: 4px;
+        font-family: "Dosis";
+        font-weight: 500;
+        color: white;
+
+        @media (orientation:landscape) {
+            font-size: 5vw;
+        }
+
+        &::before,
+        &::after {
+            content: "";
+            display: block;
+            position: absolute;
+            width: 25vw;
+            height: 7vh;
+            border: 10px solid rgba(255, 255, 255, 0.2);
+
+            @media (orientation:landscape) {
+                width: 20vw;
+                height: 12vh;
+            }
+
+
+        }
+
+        &::before {
+            bottom: 0;
+            left: 50%;
+        }
+
+        &::after {
+            top: 0;
+            right: 50%;
+        }
     }
 
     &__facts-list {
-        list-style-position: outside;
-        padding: 15px;
-        width: 85%;
+        display: flex;
+        flex-direction: column;
+        list-style: none;
+        margin: 0 auto;
+        padding: 7vh 5vw 4vh 5vw;
+
+        @media (min-width:600px) {
+            width: 600px;
+        }
+
+        @media (min-width:1024px) {
+            width: 70vw;
+        }
     }
 
     &__item {
-        border-left: 2px solid #a61d2f8c;
-        margin-left: 7px;
-        margin-bottom: 15px;
-        padding-left: 7px;
-        font-size: 1.5rem;
-        font-weight: 500;
-        font-family: 'Dosis', Arial, Helvetica, sans-serif;
+        position: relative;
+        margin: 0 auto 3vh auto;
+        margin-bottom: 3vh;
+        padding: 2vh 3vh 2vh 5vh;
+        border-radius: 0.5rem;
+        box-shadow: 2px 2px 5px 1px rgba(217, 41, 88, 0.4);
+        transition: 0.5s;
 
+        @media (orientation:landscape) {
+            margin-bottom: 6vh;
+            padding: 3vh 3vh 3vh 10.2vh;
+        }
+
+        @media (min-width:1024px) {
+            padding: 2vh 3vh 3vh 10px;
+            margin-bottom: 5vh;
+            box-shadow: none;
+            border-radius: 0;
+            border-bottom: 1px solid #8C041D;
+
+            &:hover {
+                padding: 2vh 3vh 3vh 5vw;
+                cursor: pointer;
+            }
+
+            &:hover &-number {
+                opacity: 0.5;
+            }
+        }
+
+
+        &-number {
+            position: absolute;
+            bottom: 0.5vh;
+            right: 0.5vh;
+            font-size: 2.5vh;
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: 700;
+
+            @media (min-width:1024px) {
+                top: -1vh;
+                left: 0;
+                font-size: 10vh;
+                font-weight: normal;
+                opacity: 0.1;
+
+
+            }
+        }
+
+        &-square {
+            position: absolute;
+            width: 5vh;
+            height: 5vh;
+            left: -1vh;
+            top: -1.5vh;
+            background-color: $theme-color;
+            color: white;
+            border-top-left-radius: 0.7rem;
+            border-top-right-radius: 0.7rem;
+            border-bottom-left-radius: 0.7rem;
+            transition: 0.5s;
+
+            @media (orientation:landscape) {
+                width: 9.2vh;
+                height: 9.2vh;
+            }
+
+            @media (min-width:1024px) {
+                border: none;
+                left: 0;
+                top: 0;
+                height: 100%;
+                width: auto;
+                // background-color: transparent;
+                color: black;
+
+            }
+        }
+
+        &-description {
+            font-size: 1.8vh;
+
+            @media (orientation:landscape) {
+                font-size: 4vh;
+            }
+        }
     }
+
 }
