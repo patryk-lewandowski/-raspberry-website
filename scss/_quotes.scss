@@ -1,0 +1,53 @@
+.quotes {
+    position: relative;
+    width: 100%;
+    height: 45vh;
+    background-image: url(/img/quotes1.jpg);
+    ///Obraz <a href="https://pixabay.com/pl/users/jeonsango-1594796/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1498985"> Jeon Sang-O</a> z <a href="https://pixabay.com/pl/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1498985"> Pixabay</a>
+    background-position: center;
+    // background-repeat: no-repeat;
+    // background-size: 100%, auto;
+    background-attachment: fixed;
+    border-bottom: 2px solid white;
+
+    &__dark {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #000;
+        opacity: 0.5;
+    }
+
+    &__description {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: center;
+        font-size: 4vh;
+        letter-spacing: 2px;
+        color: white;
+        font-family: 'Source Serif Pro', 'Dosis', Arial, Helvetica, sans-serif;
+        font-style: italic;
+        padding: 0 4vw;
+
+        @media (orientation:landscape) {
+            font-size: 8vh;
+        }
+
+        @media (min-width:1024px) {
+            font-size: 6vw;
+        }
+
+        @media (min-width:1200px) {
+            font-size: 4vw;
+        }
+
+        &--color {
+            font-size: 1em;
+            color: lightgreen;
+            opacity: 0.8;
+        }
+    }
+}
