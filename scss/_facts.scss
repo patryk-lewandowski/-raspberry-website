@@ -5,12 +5,29 @@
     background-color: #efffff;
 
     &__header {
+        position: relative;
         width: 100%;
         padding: 8vh 0;
         background-color: #8C041D;
-        border-bottom: 2px solid #D9305D;
-        margin-top: -1px;
 
+        // border-bottom: 2px solid #D9305D;
+        &::before {
+            display: block;
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(/img/quotes.png);
+            background-size: 80%, auto;
+            background-position: 50% 50%;
+            background-repeat: no-repeat;
+            opacity: 0.3;
+        }
+
+
+        //Obraz <a href="https://pixabay.com/pl/users/905513-905513/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1850837"> Mary Pahlke</a> z <a href="https://pixabay.com/pl/?utm_source=link-attribution&amp;utm_medium=referral&amp;utm_campaign=image&amp;utm_content=1850837"> Pixabay</a>
         @media (orientation:landscape) {
             padding: 15vh 0;
         }
@@ -23,40 +40,40 @@
         text-align: center;
         font-size: 5vh;
         letter-spacing: 4px;
-        font-family: "Dosis";
-        font-weight: 500;
+        font-family: 'Source Serif Pro', Arial, Helvetica, sans-serif;
+        font-weight: 700;
+        font-style: italic;
         color: white;
 
         @media (orientation:landscape) {
-            font-size: 5vw;
+            font-size: 7vw;
+            letter-spacing: 1vw;
         }
 
-        &::before,
-        &::after {
-            content: "";
-            display: block;
-            position: absolute;
-            width: 25vw;
-            height: 7vh;
-            border: 10px solid rgba(255, 255, 255, 0.2);
+        // &::before,
+        // &::after {
+        //     content: "";
+        //     display: block;
+        //     position: absolute;
+        //     width: 25vw;
+        //     height: 7vh;
+        //     border: 10px solid rgba(255, 255, 255, 0.2);
 
-            @media (orientation:landscape) {
-                width: 20vw;
-                height: 12vh;
-            }
+        //     @media (orientation:landscape) {
+        //         width: 20vw;
+        //         height: 12vh;
+        //     }
+        // }
 
+        // &::before {
+        //     bottom: 0;
+        //     left: 50%;
+        // }
 
-        }
-
-        &::before {
-            bottom: 0;
-            left: 50%;
-        }
-
-        &::after {
-            top: 0;
-            right: 50%;
-        }
+        // &::after {
+        //     top: 0;
+        //     right: 50%;
+        // }
     }
 
     &__facts-list {
@@ -82,23 +99,24 @@
         padding: 2vh 3vh 2vh 5vh;
         border-radius: 0.5rem;
         box-shadow: 2px 2px 5px 1px rgba(217, 41, 88, 0.4);
-        transition: 0.5s;
+        // font-family: 'Source Serif Pro', Arial, Helvetica, sans-serif;
+
+        cursor: pointer;
 
         @media (orientation:landscape) {
             margin-bottom: 6vh;
             padding: 3vh 3vh 3vh 10.2vh;
         }
 
-        @media (min-width:1024px) {
+        @media (min-width:1024px) and (orientation:landscape) {
             padding: 2vh 3vh 3vh 10px;
             margin-bottom: 5vh;
             box-shadow: none;
             border-radius: 0;
-            border-bottom: 1px solid #8C041D;
+            // border-bottom: 1px solid #8C041D;
 
-            &:hover {
-                padding: 2vh 3vh 3vh 5vw;
-                cursor: pointer;
+            &:hover>&-description {
+                transform: translateX(4vw);
             }
 
             &:hover &-number {
@@ -112,17 +130,15 @@
             bottom: 0.5vh;
             right: 0.5vh;
             font-size: 2.5vh;
-            font-family: Arial, Helvetica, sans-serif;
+            // font-family: 'Dosis', Arial, Helvetica, sans-serif;
             font-weight: 700;
 
-            @media (min-width:1024px) {
-                top: -1vh;
+            @media (min-width:1024px) and (orientation:landscape) {
+                top: -2vh;
                 left: 0;
                 font-size: 10vh;
                 font-weight: normal;
-                opacity: 0.1;
-
-
+                opacity: 0.05;
             }
         }
 
@@ -144,20 +160,21 @@
                 height: 9.2vh;
             }
 
-            @media (min-width:1024px) {
+            @media (min-width:1024px) and (orientation:landscape) {
                 border: none;
                 left: 0;
                 top: 0;
                 height: 100%;
                 width: auto;
-                // background-color: transparent;
+                background-color: transparent;
                 color: black;
-
             }
         }
 
         &-description {
             font-size: 1.8vh;
+            transition: 0.5s;
+            font-family: 'Roboto', Arial, Helvetica, sans-serif;
 
             @media (orientation:landscape) {
                 font-size: 4vh;
